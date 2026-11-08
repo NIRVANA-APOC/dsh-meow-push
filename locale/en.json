@@ -1,0 +1,11 @@
+{
+  "meta": {
+    "title": "MeoW push",
+    "description": "Sends text or HTML notifications to a registered MeoW nickname through the meow_push tools."
+  },
+  "tools": {
+    "send": "Send one MeoW notification to a registered nickname",
+    "preview": "Build the exact MeoW request without sending it",
+    "doctor": "Check MeoW push settings and API reachability"
+  }
+}

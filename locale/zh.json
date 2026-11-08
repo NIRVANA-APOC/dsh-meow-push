@@ -1,0 +1,11 @@
+{
+  "meta": {
+    "title": "MeoW 推送",
+    "description": "通过 meow_push 工具向已注册的 MeoW 昵称推送文本或 HTML 通知。"
+  },
+  "tools": {
+    "send": "向已注册的昵称发送一条 MeoW 通知",
+    "preview": "只构造 MeoW 请求，不实际发送",
+    "doctor": "检查 MeoW 推送配置与接口连通性"
+  }
+}

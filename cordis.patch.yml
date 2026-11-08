@@ -1,0 +1,25 @@
+# dsh-meow-push bundle patch: insert the MeoW push plugin row.
+#
+# Install with plugin_manager install_bundle (local directory) — the profile
+# boot merges this patch and mounts the Host plugin, which registers the
+# meow_push / meow_push_preview / meow_push_doctor tools.
+#
+# Every value below is a default; see README.md for the full meaning. A user
+# edit belongs in the profile's own cordis.patch.yml as an id-targeted
+# override (`- id: dsh-meow-push` with a complete `config` mapping), never in
+# this file.
+- insert:
+    - id: dsh-meow-push
+      name: dsh-meow-push
+      config:
+        # API endpoint. push = base URL + "/{nickname}/{title}".
+        baseUrl: https://api.chuckfang.com
+        # Per-request deadline in milliseconds.
+        timeoutMs: 15000
+        # Title used when the caller omits one (documented server default).
+        defaultTitle: MeoW
+        # Local throttle: refuse to start a push sooner than this after the
+        # previous one, so the documented 3 s / 1 min limits are not tripped.
+        minSendIntervalMs: 3000
+        # Refuse a plain-http baseUrl (message content would travel in clear).
+        allowHttp: false
